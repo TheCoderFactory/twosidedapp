@@ -1,2 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<%= current_user.email %>
+<% if user_signed_in? %>
+  <%= link_to 'List your place', new_user_registration_path(user_type: 'renter'), class: 'btn btn-primary' %>
+  <%= link_to 'Find a new share house', new_user_registration_path(user_type: 'rentee'), class: 'btn btn-success' %>
+<% else %>
+asdfa
+<% end %>
+<p>You are a <%= current_user.user_type %></p>
